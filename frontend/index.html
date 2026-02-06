@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MonGâteau - Commandez vos gâteaux artisanaux en ligne. Gâteaux d'anniversaire, mariage, et créations personnalisées livrés chez vous.">
+  <meta name="keywords" content="gâteau, pâtisserie, anniversaire, mariage, commande en ligne, livraison">
+  <title>MonGâteau | Pâtisserie Artisanale - Commande en Ligne</title>
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">🎂</span>
+          <span>MonGâteau</span>
+        </a>
+        
+        <div class="nav-links">
+          <a href="index.html" class="nav-link active">Accueil</a>
+          <a href="catalogue.html" class="nav-link">Nos Gâteaux</a>
+          <a href="#about" class="nav-link">À Propos</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        
+        <div class="flex" style="gap: var(--space-lg);">
+          <a href="panier.html" class="cart-btn" id="cartBtn">
+            🛒
+            <span class="cart-count" id="cartCount">0</span>
+          </a>
+          <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+    <a href="index.html">Accueil</a>
+    <a href="catalogue.html">Nos Gâteaux</a>
+    <a href="#about">À Propos</a>
+    <a href="#contact">Contact</a>
+    <a href="panier.html">Panier</a>
+  </div>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-badge">✨ Artisanat & Passion</span>
+          <h1>Des Gâteaux d'Exception pour vos <span>Moments Précieux</span></h1>
+          <p class="hero-description">
+            Découvrez notre collection de gâteaux artisanaux, préparés avec amour et des ingrédients de première qualité. Anniversaires, mariages ou simple gourmandise — nous créons vos rêves sucrés.
+          </p>
+          <div class="hero-buttons">
+            <a href="catalogue.html" class="btn btn-primary btn-lg">
+              Voir nos créations →
+            </a>
+            <a href="#how-it-works" class="btn btn-secondary btn-lg">
+              Comment ça marche
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Gâteaux livrés</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">98%</div>
+              <div class="stat-label">Clients satisfaits</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Créations uniques</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=600&fit=crop" alt="Gâteau au chocolat décoré">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Cakes -->
+  <section class="section" id="featured">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">🌟 Nos Stars</span>
+        <h2 class="section-title">Gâteaux Populaires</h2>
+        <p class="section-description">
+          Les créations préférées de nos clients, préparées avec passion chaque jour.
+        </p>
+      </div>
+      
+      <div class="grid grid-3 stagger-children" id="featuredCakes">
+        <!-- Cakes loaded dynamically -->
+      </div>
+      
+      <div class="text-center" style="margin-top: var(--space-2xl);">
+        <a href="catalogue.html" class="btn btn-outline btn-lg">
+          Voir tout le catalogue →
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- How it Works -->
+  <section class="section features" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">📋 Simple & Rapide</span>
+        <h2 class="section-title">Comment ça marche</h2>
+        <p class="section-description">
+          En quelques clics, recevez votre gâteau de rêve directement chez vous.
+        </p>
+      </div>
+      
+      <div class="grid grid-4">
+        <div class="feature-card">
+          <div class="feature-icon">🎂</div>
+          <h4 class="feature-title">Choisissez</h4>
+          <p class="feature-description">Parcourez notre catalogue et sélectionnez le gâteau parfait.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✏️</div>
+          <h4 class="feature-title">Personnalisez</h4>
+          <p class="feature-description">Taille, message, décorations — tout est possible !</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <h4 class="feature-title">Planifiez</h4>
+          <p class="feature-description">Choisissez votre date et créneau de livraison.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚚</div>
+          <h4 class="feature-title">Recevez</h4>
+          <p class="feature-description">Nous livrons avec soin à votre porte !</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Categories -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">🍰 Par Occasion</span>
+        <h2 class="section-title">Nos Catégories</h2>
+      </div>
+      
+      <div class="grid grid-3">
+        <a href="catalogue.html?category=anniversaire" class="cake-card">
+          <div class="cake-card-image">
+            <img src="https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=400&h=300&fit=crop" alt="Gâteau d'anniversaire">
+          </div>
+          <div class="cake-card-body text-center">
+            <h3 class="cake-card-title">Anniversaires</h3>
+            <p class="cake-card-description">Célébrez chaque année avec style</p>
+          </div>
+        </a>
+        
+        <a href="catalogue.html?category=mariage" class="cake-card">
+          <div class="cake-card-image">
+            <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=400&h=300&fit=crop" alt="Gâteau de mariage">
+          </div>
+          <div class="cake-card-body text-center">
+            <h3 class="cake-card-title">Mariages</h3>
+            <p class="cake-card-description">L'élégance pour votre grand jour</p>
+          </div>
+        </a>
+        
+        <a href="catalogue.html?category=enfants" class="cake-card">
+          <div class="cake-card-image">
+            <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=400&h=300&fit=crop" alt="Gâteau pour enfants">
+          </div>
+          <div class="cake-card-body text-center">
+            <h3 class="cake-card-title">Enfants</h3>
+            <p class="cake-card-description">Des créations magiques pour les petits</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials -->
+  <section class="section" style="background: var(--rose-light);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">💬 Avis Clients</span>
+        <h2 class="section-title">Ils nous font confiance</h2>
+      </div>
+      
+      <div class="grid grid-3">
+        <div class="cake-card" style="padding: var(--space-xl);">
+          <p style="font-size: 1.125rem; margin-bottom: var(--space-lg);">"Un gâteau magnifique pour l'anniversaire de ma fille ! Elle était aux anges. Merci MonGâteau !"</p>
+          <div class="flex" style="gap: var(--space-md); align-items: center;">
+            <div style="width: 50px; height: 50px; background: var(--caramel-light); border-radius: 50%; display: flex; align-items: center; justify-content: center;">👩</div>
+            <div>
+              <strong>Sophie M.</strong>
+              <div class="text-muted" style="font-size: 0.875rem;">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cake-card" style="padding: var(--space-xl);">
+          <p style="font-size: 1.125rem; margin-bottom: var(--space-lg);">"Notre wedding cake était parfait ! Goût incroyable et décoration impeccable."</p>
+          <div class="flex" style="gap: var(--space-md); align-items: center;">
+            <div style="width: 50px; height: 50px; background: var(--caramel-light); border-radius: 50%; display: flex; align-items: center; justify-content: center;">👨</div>
+            <div>
+              <strong>Pierre & Marie</strong>
+              <div class="text-muted" style="font-size: 0.875rem;">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cake-card" style="padding: var(--space-xl);">
+          <p style="font-size: 1.125rem; margin-bottom: var(--space-lg);">"Livraison ponctuelle, gâteau délicieux. Je recommande à 100% !"</p>
+          <div class="flex" style="gap: var(--space-md); align-items: center;">
+            <div style="width: 50px; height: 50px; background: var(--caramel-light); border-radius: 50%; display: flex; align-items: center; justify-content: center;">👩</div>
+            <div>
+              <strong>Amina K.</strong>
+              <div class="text-muted" style="font-size: 0.875rem;">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section text-center" style="background: linear-gradient(135deg, var(--chocolate) 0%, var(--chocolate-light) 100%); color: var(--cream);">
+    <div class="container">
+      <h2 style="color: var(--cream); margin-bottom: var(--space-md);">Prêt à commander ?</h2>
+      <p style="max-width: 500px; margin: 0 auto var(--space-xl); opacity: 0.9;">
+        Faites-vous plaisir ou offrez un moment de bonheur à vos proches.
+      </p>
+      <a href="catalogue.html" class="btn btn-primary btn-lg">
+        Commander maintenant 🎂
+      </a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-icon">🎂</span>
+            <span>MonGâteau</span>
+          </div>
+          <p class="footer-description">
+            Artisan pâtissier depuis 2020. Nous créons des gâteaux d'exception pour tous vos moments de bonheur.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link">📘</a>
+            <a href="#" class="social-link">📸</a>
+            <a href="#" class="social-link">🐦</a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Nos Gâteaux</a></li>
+            <li><a href="#about">À Propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Catégories</h4>
+          <ul class="footer-links">
+            <li><a href="catalogue.html?category=anniversaire">Anniversaires</a></li>
+            <li><a href="catalogue.html?category=mariage">Mariages</a></li>
+            <li><a href="catalogue.html?category=enfants">Enfants</a></li>
+            <li><a href="catalogue.html?category=personnalise">Personnalisés</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li>📍 123 Rue de la Pâtisserie</li>
+            <li>📞 +33 1 23 45 67 89</li>
+            <li>✉️ hello@mongateau.fr</li>
+            <li>🕐 Lun-Sam: 9h-18h</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2026 MonGâteau. Tous droits réservés.</p>
+        <p>Fait avec ❤️ et beaucoup de sucre</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/app.js"></script>
+</body>
+</html>

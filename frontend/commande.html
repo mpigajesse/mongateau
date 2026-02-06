@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finalisez votre commande - MonGâteau">
+  <title>Commande | MonGâteau</title>
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">🎂</span>
+          <span>MonGâteau</span>
+        </a>
+        
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Accueil</a>
+          <a href="catalogue.html" class="nav-link">Nos Gâteaux</a>
+        </div>
+        
+        <a href="panier.html" class="cart-btn" id="cartBtn">
+          🛒
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span class="separator">/</span>
+        <a href="panier.html">Panier</a>
+        <span class="separator">/</span>
+        <span>Commande</span>
+      </nav>
+      <h1>Finaliser la Commande</h1>
+    </div>
+  </section>
+  
+  <!-- Order Form -->
+  <section class="section">
+    <div class="container">
+      <form id="orderForm" class="grid" style="grid-template-columns: 1fr 400px; gap: var(--space-2xl);">
+        
+        <!-- Form Fields -->
+        <div>
+          <!-- Customer Info -->
+          <div class="order-summary" style="margin-bottom: var(--space-xl);">
+            <h3 style="margin-bottom: var(--space-lg);">👤 Vos Informations</h3>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="firstName">Prénom *</label>
+                <input type="text" id="firstName" name="firstName" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lastName">Nom *</label>
+                <input type="text" id="lastName" name="lastName" class="form-input" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="email">Email *</label>
+              <input type="email" id="email" name="email" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="phone">Téléphone *</label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="+33 6 12 34 56 78" required>
+            </div>
+          </div>
+          
+          <!-- Delivery Info -->
+          <div class="order-summary" style="margin-bottom: var(--space-xl);">
+            <h3 style="margin-bottom: var(--space-lg);">🚚 Livraison</h3>
+            
+            <div class="form-group">
+              <label class="form-label" for="address">Adresse *</label>
+              <input type="text" id="address" name="address" class="form-input" placeholder="123 Rue de la Pâtisserie" required>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="city">Ville *</label>
+                <input type="text" id="city" name="city" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="postalCode">Code Postal *</label>
+                <input type="text" id="postalCode" name="postalCode" class="form-input" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="deliveryDate">Date de livraison *</label>
+                <input type="date" id="deliveryDate" name="deliveryDate" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="deliveryTimeSlot">Créneau horaire</label>
+                <select id="deliveryTimeSlot" name="deliveryTimeSlot" class="form-select">
+                  <option value="">Choisir...</option>
+                  <option value="9h-12h">9h - 12h</option>
+                  <option value="12h-15h">12h - 15h</option>
+                  <option value="15h-18h">15h - 18h</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="deliveryInstructions">Instructions de livraison</label>
+              <textarea id="deliveryInstructions" name="deliveryInstructions" class="form-textarea" placeholder="Code d'entrée, étage, etc."></textarea>
+            </div>
+          </div>
+          
+          <!-- Payment -->
+          <div class="order-summary">
+            <h3 style="margin-bottom: var(--space-lg);">💳 Paiement</h3>
+            
+            <div class="form-group">
+              <label class="form-label">Mode de paiement *</label>
+              <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+                <label style="display: flex; align-items: center; gap: var(--space-sm); cursor: pointer;">
+                  <input type="radio" name="paymentMethod" value="card" checked>
+                  <span>💳 Carte bancaire</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--space-sm); cursor: pointer;">
+                  <input type="radio" name="paymentMethod" value="cash">
+                  <span>💵 Espèces à la livraison</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--space-sm); cursor: pointer;">
+                  <input type="radio" name="paymentMethod" value="transfer">
+                  <span>🏦 Virement</span>
+                </label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="notes">Notes supplémentaires</label>
+              <textarea id="notes" name="notes" class="form-textarea" placeholder="Message sur le gâteau, allergies, etc."></textarea>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Order Summary -->
+        <div>
+          <div class="order-summary" style="position: sticky; top: 100px;">
+            <h3 style="margin-bottom: var(--space-lg);">🛒 Votre Commande</h3>
+            
+            <div id="orderItems">
+              <!-- Items loaded dynamically -->
+            </div>
+            
+            <hr style="margin: var(--space-lg) 0; border: none; border-top: 1px solid var(--gray-200);">
+            
+            <div class="summary-row">
+              <span>Sous-total</span>
+              <span id="subtotal">0,00 €</span>
+            </div>
+            <div class="summary-row">
+              <span>Livraison</span>
+              <span id="deliveryFee">5,00 €</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total</span>
+              <span class="price" id="total">5,00 €</span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: var(--space-lg);">
+              Confirmer la commande 🎂
+            </button>
+            
+            <p style="font-size: 0.75rem; color: var(--gray-500); text-align: center; margin-top: var(--space-md);">
+              En confirmant, vous acceptez nos conditions générales de vente.
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  
+  <!-- Success Modal -->
+  <div id="successModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center;">
+    <div style="background: white; padding: var(--space-2xl); border-radius: var(--radius-xl); text-align: center; max-width: 500px; margin: var(--space-lg);">
+      <div style="font-size: 4rem; margin-bottom: var(--space-lg);">🎉</div>
+      <h2 style="margin-bottom: var(--space-md);">Commande Confirmée !</h2>
+      <p style="margin-bottom: var(--space-sm);">Merci pour votre commande.</p>
+      <p style="margin-bottom: var(--space-xl);">Numéro de commande: <strong id="orderNumber"></strong></p>
+      <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
+    </div>
+  </div>
+  
+  <script src="js/api.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/commande.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "mongateau-backend",
+  "version": "1.0.0",
+  "description": "API REST pour MonGâteau - Commande de gâteaux en ligne",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "db:sync": "node src/scripts/syncDb.js",
+    "db:seed": "node src/scripts/seed.js"
+  },
+  "keywords": ["cake", "bakery", "ecommerce", "api"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "pg": "^8.11.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.35.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
