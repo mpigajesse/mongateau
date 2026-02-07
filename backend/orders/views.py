@@ -3,6 +3,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from django.http import FileResponse
+from django.utils import timezone
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
@@ -21,8 +22,13 @@ class CustomCakeRequestViewSet(viewsets.ModelViewSet):
     """
     ViewSet pour la gestion des demandes de gâteaux sur mesure
     """
-    queryset = CustomCakeRequest.objects.all()
+    queryset = CustomCakeRequest.objects.filter(is_deleted=False)
     permission_classes = [AllowAny]
+
+    def perform_destroy(self, instance):
+        instance.is_deleted = True
+        instance.deleted_at = timezone.now()
+        instance.save()
 
     def get_serializer_class(self):
         if self.action == 'create':
@@ -34,8 +40,13 @@ class OrderViewSet(viewsets.ModelViewSet):
     """
     ViewSet pour la gestion des commandes
     """
-    queryset = Order.objects.all()
+    queryset = Order.objects.filter(is_deleted=False)
     permission_classes = [AllowAny]
+
+    def perform_destroy(self, instance):
+        instance.is_deleted = True
+        instance.deleted_at = timezone.now()
+        instance.save()
     
     def get_serializer_class(self):
         if self.action == 'create':

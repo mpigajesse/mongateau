@@ -19,5 +19,7 @@ class CakeTypeSerializer(serializers.ModelSerializer):
             'base_price',
             'image_url',
             'is_available',
+            'is_deleted',
+            'deleted_at',
         ]
-        read_only_fields = ['id']
+        read_only_fields = ['id', 'is_deleted', 'deleted_at']

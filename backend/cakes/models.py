@@ -42,6 +42,18 @@ class CakeType(models.Model):
         default=True,
         verbose_name="Disponible"
     )
+
+    # Soft delete
+    is_deleted = models.BooleanField(
+        default=False,
+        verbose_name="Supprimé"
+    )
+    deleted_at = models.DateTimeField(
+        null=True,
+        blank=True,
+        verbose_name="Date de suppression"
+    )
+
     created_at = models.DateTimeField(
         auto_now_add=True,
         verbose_name="Date de création"

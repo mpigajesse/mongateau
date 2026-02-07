@@ -9,7 +9,7 @@ class CakeTypeViewSet(viewsets.ReadOnlyModelViewSet):
     ViewSet pour la consultation des types de gâteaux.
     Les clients peuvent uniquement consulter, pas créer/modifier.
     """
-    queryset = CakeType.objects.filter(is_available=True)
+    queryset = CakeType.objects.filter(is_available=True, is_deleted=False)
     serializer_class = CakeTypeSerializer
     permission_classes = [AllowAny]
     filter_backends = [filters.SearchFilter]

@@ -9,10 +9,9 @@ class CustomCakeRequest(models.Model):
     """
     STATUS_CHOICES = [
         ('pending', 'En attente'),
-        ('contacted', 'Contacté'),
-        ('quoted', 'Devis envoyé'),
-        ('approved', 'Validé'),
-        ('cancelled', 'Annulé'),
+        ('reviewed', 'Examinée'),
+        ('approved', 'Approuvée'),
+        ('rejected', 'Rejetée'),
     ]
 
     request_number = models.CharField(
@@ -50,6 +49,22 @@ class CustomCakeRequest(models.Model):
         choices=STATUS_CHOICES,
         default='pending',
         verbose_name="Statut"
+    )
+
+    admin_notes = models.TextField(
+        blank=True,
+        verbose_name="Notes administratives"
+    )
+
+    # Soft delete
+    is_deleted = models.BooleanField(
+        default=False,
+        verbose_name="Supprimée"
+    )
+    deleted_at = models.DateTimeField(
+        null=True,
+        blank=True,
+        verbose_name="Date de suppression"
     )
 
     created_at = models.DateTimeField(
@@ -147,6 +162,17 @@ class Order(models.Model):
         verbose_name="Chemin du ticket JPG"
     )
     
+    # Soft delete
+    is_deleted = models.BooleanField(
+        default=False,
+        verbose_name="Supprimée"
+    )
+    deleted_at = models.DateTimeField(
+        null=True,
+        blank=True,
+        verbose_name="Date de suppression"
+    )
+
     # Timestamps
     created_at = models.DateTimeField(
         auto_now_add=True,
@@ -175,3 +201,57 @@ class Order(models.Model):
             self.total_price = self.cake_type.base_price
         
         super().save(*args, **kwargs)
+
+
+class AdminProfile(models.Model):
+    """
+    Profil administrateur (singleton)
+    """
+    full_name = models.CharField(max_length=200)
+    email = models.EmailField()
+    phone = models.CharField(max_length=30, blank=True)
+    address = models.TextField(blank=True)
+    password_hash = models.CharField(max_length=128, blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Profil administrateur"
+        verbose_name_plural = "Profil administrateur"
+
+    def set_password(self, raw_password: str):
+        from django.contrib.auth.hashers import make_password
+        self.password_hash = make_password(raw_password)
+
+    def __str__(self):
+        return self.full_name
+
+
+class AdminSettings(models.Model):
+    """
+    Paramètres administrateur (singleton)
+    """
+    store_name = models.CharField(max_length=200, default='MonGâteau')
+    store_phone = models.CharField(max_length=50, default='+241 07 40 13 02')
+    store_email = models.EmailField(default='mpigajesse23@gmail.com')
+    store_address = models.TextField(default='Libreville, Gabon')
+
+    email_notifications = models.BooleanField(default=True)
+    sms_notifications = models.BooleanField(default=True)
+    order_notifications = models.BooleanField(default=True)
+
+    min_order_days = models.PositiveIntegerField(default=2)
+    delivery_fee = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    tax_rate = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+
+    items_per_page = models.PositiveIntegerField(default=10)
+    default_currency = models.CharField(max_length=20, default='FCFA')
+    language = models.CharField(max_length=10, default='fr')
+
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Paramètres administrateur"
+        verbose_name_plural = "Paramètres administrateur"
+
+    def __str__(self):
+        return "Paramètres administrateur"

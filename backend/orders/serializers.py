@@ -21,9 +21,13 @@ class CustomCakeRequestSerializer(serializers.ModelSerializer):
             'estimated_budget',
             'status',
             'status_display',
+            'admin_notes',
             'created_at',
+            'updated_at',
+            'is_deleted',
+            'deleted_at',
         ]
-        read_only_fields = ['id', 'request_number', 'status', 'created_at']
+        read_only_fields = ['id', 'request_number', 'created_at', 'updated_at', 'is_deleted', 'deleted_at']
 
 
 class CustomCakeRequestCreateSerializer(serializers.ModelSerializer):
@@ -64,6 +68,7 @@ class OrderSerializer(serializers.ModelSerializer):
     Serializer pour les commandes
     """
     cake_type_details = CakeTypeSerializer(source='cake_type', read_only=True)
+    cake_type_display = serializers.CharField(source='cake_type.name', read_only=True)
     status_display = serializers.CharField(source='get_status_display', read_only=True)
     
     class Meta:
@@ -74,6 +79,7 @@ class OrderSerializer(serializers.ModelSerializer):
             'customer_name',
             'customer_phone',
             'cake_type',
+            'cake_type_display',
             'cake_type_details',
             'custom_message',
             'delivery_date',
@@ -83,8 +89,11 @@ class OrderSerializer(serializers.ModelSerializer):
             'status_display',
             'ticket_path',
             'created_at',
+            'updated_at',
+            'is_deleted',
+            'deleted_at',
         ]
-        read_only_fields = ['id', 'order_number', 'ticket_path', 'created_at']
+        read_only_fields = ['id', 'order_number', 'ticket_path', 'created_at', 'updated_at', 'is_deleted', 'deleted_at']
 
 
 class OrderCreateSerializer(serializers.ModelSerializer):
