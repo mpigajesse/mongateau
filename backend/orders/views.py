@@ -115,11 +115,6 @@ class OrderViewSet(viewsets.ModelViewSet):
                     'valid': True,
                     'order_number': order.order_number,
                     'customer_name': order.customer_name,
-                    'cake_type': order.cake_type.name,
-                    'delivery_date': order.delivery_date,
-                    'total_price': order.total_price,
-                    'status': order.status,
-                    'status_display': order.get_status_display(),
                     'message': 'Commande valide ✓'
                 })
             

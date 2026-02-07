@@ -225,14 +225,14 @@ def generate_order_ticket(order):
     qr_size = 170
     
     # Générer le QR code
-    verification_url = f"http://localhost:8000/verify/{order.order_number}/"
+    qr_payload = f"{order.order_number} | {order.customer_name}"
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_H,
         box_size=12,
         border=2,
     )
-    qr.add_data(verification_url)
+    qr.add_data(qr_payload)
     qr.make(fit=True)
     
     qr_img = qr.make_image(fill_color="#2B2B2B", back_color="white")

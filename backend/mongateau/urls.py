@@ -13,10 +13,6 @@ urlpatterns = [
     path('api/orders/', include('orders.urls')),
     path('api/admin/', include('orders.urls_admin')),
     path('api/admin/cakes/', include('cakes.urls_admin')),
-    # Route directe pour la vérification QR code (sans /api/ pour URLs courtes)
-    path('verify/<str:order_number>/', 
-         OrderViewSet.as_view({'get': 'verify'}), 
-         name='verify_order'),
 ]
 
 if settings.DEBUG:
