@@ -1,0 +1,62 @@
+[
+    {
+        "model": "cakes.caketype",
+        "pk": 1,
+        "fields": {
+            "name": "Gâteau d'anniversaire",
+            "cake_type": "birthday",
+            "description": "Un délicieux gâteau pour célébrer votre anniversaire avec style ! Disponible en plusieurs parfums : chocolat, vanille, fraise. Personnalisable avec le nombre d'années et un message d'anniversaire.",
+            "base_price": "15000.00",
+            "image_url": "https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=400",
+            "is_available": true
+        }
+    },
+    {
+        "model": "cakes.caketype",
+        "pk": 2,
+        "fields": {
+            "name": "Gâteau pour événements",
+            "cake_type": "event",
+            "description": "Parfait pour vos événements professionnels ou familiaux : baptêmes, communions, réussites scolaires, promotions. Un gâteau élégant qui impressionnera vos invités.",
+            "base_price": "20000.00",
+            "image_url": "https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=400",
+            "is_available": true
+        }
+    },
+    {
+        "model": "cakes.caketype",
+        "pk": 3,
+        "fields": {
+            "name": "Gâteau surprise",
+            "cake_type": "surprise",
+            "description": "Offrez une surprise inoubliable ! Un gâteau spectaculaire avec un élément surprise à l'intérieur : bonbons, chocolats, ou message caché. Idéal pour marquer les esprits.",
+            "base_price": "18000.00",
+            "image_url": "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400",
+            "is_available": true
+        }
+    },
+    {
+        "model": "cakes.caketype",
+        "pk": 4,
+        "fields": {
+            "name": "Gâteau personnalisé",
+            "cake_type": "custom",
+            "description": "Créez le gâteau de vos rêves ! Choisissez le thème, les couleurs, la forme et les décorations. Nous donnons vie à votre imagination avec notre savoir-faire artisanal.",
+            "base_price": "25000.00",
+            "image_url": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400",
+            "is_available": true
+        }
+    },
+    {
+        "model": "cakes.caketype",
+        "pk": 5,
+        "fields": {
+            "name": "Gâteau de mariage",
+            "cake_type": "wedding",
+            "description": "Un gâteau de mariage élégant et raffiné pour votre jour le plus important. Plusieurs étages disponibles, décorations sur mesure, et saveurs exquises. Consultation personnalisée offerte.",
+            "base_price": "50000.00",
+            "image_url": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=400",
+            "is_available": true
+        }
+    }
+]

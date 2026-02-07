@@ -1,0 +1,59 @@
+============================================================
+  COMMANDES RAPIDES - MonGâteau
+============================================================
+
+📌 CHARGER LES DONNÉES INITIALES (5 gâteaux)
+------------------------------------------------------------
+cd D:\mongateau\backend
+venv\Scripts\activate
+python manage.py loaddata cakes/fixtures/initial_cakes.json
+
+
+🚀 LANCER LE BACKEND
+------------------------------------------------------------
+cd D:\mongateau\backend
+venv\Scripts\activate
+python manage.py runserver
+
+→ Backend sur : http://localhost:8000
+
+
+🎨 LANCER LE FRONTEND (nouveau terminal)
+------------------------------------------------------------
+cd D:\mongateau\frontend
+npm start
+
+→ Frontend sur : http://localhost:3000
+
+
+📊 VÉRIFIER LES DONNÉES
+------------------------------------------------------------
+API Gâteaux : http://localhost:8000/api/cakes/types/
+Admin Django : http://localhost:8000/admin
+  User: admin
+  Password: (celui que vous avez créé)
+
+
+🔄 SCRIPTS AUTOMATIQUES (après première config)
+------------------------------------------------------------
+Backend  : D:\mongateau\backend\start_backend.bat
+Frontend : D:\mongateau\frontend\start_frontend.bat
+
+
+✅ CHECKLIST
+------------------------------------------------------------
+[ ] PostgreSQL démarré
+[ ] Base de données 'mongateau' créée
+[ ] Migrations appliquées (FAIT ✓)
+[ ] Superutilisateur créé (FAIT ✓)
+[ ] Gâteaux chargés (À FAIRE)
+[ ] Frontend installé (en cours)
+[ ] Backend lancé
+[ ] Frontend lancé
+[ ] Test de commande
+
+
+============================================================
+Propriétaire : NAOMIE MOUSSAVOU
+🍰 MonGâteau - Presque prêt !
+============================================================
