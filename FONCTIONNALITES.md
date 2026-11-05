@@ -109,7 +109,7 @@ Génération automatique d'un ticket PDF professionnel pour chaque commande.
 - 💰 Prix total
 - 💵 Mention "Paiement à la livraison"
 - ⚠️ Instructions de conservation
-- 👩‍🍳 Signature : NAOMIE MOUSSAVOU
+- 👩‍🍳 Signature : la boutique
 
 #### Technologie
 - **ReportLab** : Génération PDF
@@ -155,7 +155,7 @@ Génération automatique d'un ticket PDF professionnel pour chaque commande.
   - Commande rapide
   - Ticket PDF
   - Paiement livraison
-- 👩‍🍳 **Footer** : Propriétaire NAOMIE MOUSSAVOU
+- 👩‍🍳 **Footer** : nom de la boutique
 
 #### Design
 - ✅ Gradient de fond animé
@@ -410,6 +410,6 @@ Génération automatique d'un ticket PDF professionnel pour chaque commande.
 
 ---
 
-**Propriétaire : NAOMIE MOUSSAVOU**
+**MonGâteau**
 
 🍰 **MonGâteau** - Une application complète, moderne et professionnelle !

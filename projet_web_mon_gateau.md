@@ -6,7 +6,7 @@
 
 L’objectif principal est de faciliter la réservation de gâteaux artisanaux pour différents événements, avec un processus **fluide, rapide et sans complexité inutile**.
 
-La fabrication et la gestion des commandes sont assurées par **NAOMIE MOUSSAVOU**, propriétaire de l’application et créatrice des gâteaux.
+La fabrication et la gestion des commandes sont assurées par la gérante de la pâtisserie, propriétaire de l’application et créatrice des gâteaux.
 
 ---
 
@@ -95,7 +95,7 @@ Chaque type de gâteau peut inclure :
 ## 7. Identité & Propriété
 
 - **Nom de l’application :** MonGâteau
-- **Propriétaire & créatrice :** NAOMIE MOUSSAVOU
+- **Propriétaire & créatrice :** la gérante de la pâtisserie
 - **Activité :** Fabrication artisanale de gâteaux & gestion des commandes
 
 ---

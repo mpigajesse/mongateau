@@ -231,8 +231,8 @@ class AdminSettings(models.Model):
     Paramètres administrateur (singleton)
     """
     store_name = models.CharField(max_length=200, default='MonGâteau')
-    store_phone = models.CharField(max_length=50, default='+241 07 40 13 02')
-    store_email = models.EmailField(default='mpigajesse23@gmail.com')
+    store_phone = models.CharField(max_length=50, default='', blank=True)
+    store_email = models.EmailField(default='', blank=True)
     store_address = models.TextField(default='Libreville, Gabon')
 
     email_notifications = models.BooleanField(default=True)

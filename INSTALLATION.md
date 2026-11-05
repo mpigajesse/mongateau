@@ -293,6 +293,6 @@ Pour toute question ou problème :
 
 ---
 
-**Propriétaire : NAOMIE MOUSSAVOU**
+**MonGâteau**
 
 Bon développement ! 🍰

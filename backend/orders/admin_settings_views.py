@@ -1,3 +1,4 @@
+import os
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
 from rest_framework.permissions import AllowAny
@@ -13,8 +14,9 @@ class AdminSettingsViewSet(ViewSet):
             id=1,
             defaults={
                 'store_name': 'MonGâteau',
-                'store_phone': '+241 07 40 13 02',
-                'store_email': 'mpigajesse23@gmail.com',
+                # Coordonnées réelles : variables d'environnement, jamais dans le dépôt.
+                'store_phone': os.environ.get('MONGATEAU_STORE_PHONE', ''),
+                'store_email': os.environ.get('MONGATEAU_STORE_EMAIL', ''),
                 'store_address': 'Libreville, Gabon',
                 'email_notifications': True,
                 'sms_notifications': True,

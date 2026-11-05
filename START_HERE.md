@@ -201,12 +201,12 @@ chmod +x start_frontend.sh
 ### Pour les clients
 Consultez le [GUIDE_UTILISATION.md](GUIDE_UTILISATION.md) section "Pour les clients"
 
-### Pour l'administrateur (NAOMIE MOUSSAVOU)
+### Pour l'administratrice ou l'administrateur
 Consultez le [GUIDE_UTILISATION.md](GUIDE_UTILISATION.md) section "Pour l'administrateur"
 
 ---
 
-**Propriétaire : NAOMIE MOUSSAVOU**
+**MonGâteau**
 
 🍰 **MonGâteau** - Votre application de commande de gâteaux est prête !
 
