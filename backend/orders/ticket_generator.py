@@ -100,15 +100,20 @@ def generate_order_ticket(order):
     )
     
     # === CHARGEMENT DES POLICES ===
+    # DejaVu est livrée avec l'application (orders/fonts/, licence libre) : un
+    # hébergeur sans polices système (Render, conteneur minimal) produisait
+    # sinon un ticket sans accents (« R▯SERVATION », « G▯teau »).
+    polices = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fonts')
+    gras = os.path.join(polices, 'DejaVuSans-Bold.ttf')
+    normal = os.path.join(polices, 'DejaVuSans.ttf')
     try:
-        # Linux fonts
-        font_brand = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 70)
-        font_title = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 38)
-        font_subtitle = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 26)
-        font_label = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 22)
-        font_value = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
-        font_highlight = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 48)
-        font_small = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+        font_brand = ImageFont.truetype(gras, 70)
+        font_title = ImageFont.truetype(gras, 38)
+        font_subtitle = ImageFont.truetype(normal, 26)
+        font_label = ImageFont.truetype(gras, 22)
+        font_value = ImageFont.truetype(normal, 24)
+        font_highlight = ImageFont.truetype(gras, 48)
+        font_small = ImageFont.truetype(normal, 18)
     except:
         try:
             # Windows fonts
@@ -120,14 +125,16 @@ def generate_order_ticket(order):
             font_highlight = ImageFont.truetype("arialbd.ttf", 48)
             font_small = ImageFont.truetype("arial.ttf", 18)
         except:
-            # Fallback
-            font_brand = ImageFont.load_default()
-            font_title = ImageFont.load_default()
-            font_subtitle = ImageFont.load_default()
-            font_label = ImageFont.load_default()
-            font_value = ImageFont.load_default()
-            font_highlight = ImageFont.load_default()
-            font_small = ImageFont.load_default()
+            # Fallback : serveur sans polices système (ex. hébergeur PaaS).
+            # Pillow >= 10.1 met à l'échelle sa police intégrée ; sans la
+            # taille, le ticket sortait en police bitmap de 11 px, illisible.
+            font_brand = ImageFont.load_default(size=70)
+            font_title = ImageFont.load_default(size=38)
+            font_subtitle = ImageFont.load_default(size=26)
+            font_label = ImageFont.load_default(size=22)
+            font_value = ImageFont.load_default(size=24)
+            font_highlight = ImageFont.load_default(size=48)
+            font_small = ImageFont.load_default(size=18)
     
     # === HEADER SUPPRIMÉ ===
     # Logo MonGâteau supprimé
