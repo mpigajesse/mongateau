@@ -1,0 +1,15 @@
+{% extends "cakes/demo_base.html" %}
+{% block titre %}Commande {{ commande.order_number }} — MonGâteau (démo){% endblock %}
+{% block contenu %}
+<div class="encadre">
+  <h2>Commande enregistrée</h2>
+  <p>Numéro : <strong>{{ commande.order_number }}</strong></p>
+  <p>{{ commande.cake_type.name }} — {{ commande.total_price|floatformat:0 }} FCFA, livraison le {{ commande.delivery_date|date:"d/m/Y" }}.</p>
+  <p class="petit">Le ticket (image avec QR code) est généré automatiquement ; le QR code permet au livreur de vérifier la commande.</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap">
+    <a class="btn btn-plein" href="/api/orders/{{ commande.id }}/download-ticket/">Télécharger le ticket</a>
+    <a class="btn" style="border:1px solid #ddd" href="/api/orders/verify/{{ commande.order_number }}/">Page de vérification</a>
+    <a class="btn" style="border:1px solid #ddd" href="/api/orders/{{ commande.id }}/">Voir dans l'API</a>
+  </div>
+</div>
+{% endblock %}

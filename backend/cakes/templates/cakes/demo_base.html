@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block titre %}MonGâteau — démonstration{% endblock %}</title>
+<style>
+  :root { --violet:#8A2387; --rose:#E94057; --orange:#F27121; --encre:#2B2B2B; --fond:#FFF8F5; --gris:#6B6B6B; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; background:var(--fond); color:var(--encre); line-height:1.5; }
+  a { color:var(--violet); }
+  .bandeau { background:var(--encre); color:#fff; font-size:.85rem; padding:8px 16px; text-align:center; }
+  header { background:linear-gradient(135deg,var(--violet),var(--rose) 55%,var(--orange)); color:#fff; padding:40px 16px; text-align:center; }
+  header h1 { font-size:2.2rem; } header p { opacity:.92; margin-top:6px; }
+  nav { margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  nav a, .btn { display:inline-block; background:#fff; color:var(--violet); padding:10px 18px; border-radius:999px; text-decoration:none; font-weight:600; border:none; cursor:pointer; font-size:1rem; transition:transform .4s ease, box-shadow .4s ease; }
+  nav a:hover, .btn:hover { transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.15); }
+  .btn-plein { background:var(--violet); color:#fff; }
+  main { max-width:1100px; margin:0 auto; padding:32px 16px 64px; }
+  .grille { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
+  .carte { background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,.06); display:flex; flex-direction:column; }
+  .carte img { width:100%; height:170px; object-fit:cover; background:#f1e6ee; }
+  .carte div { padding:16px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .prix { color:var(--rose); font-weight:700; font-size:1.1rem; }
+  .petit { color:var(--gris); font-size:.9rem; }
+  form { background:#fff; border-radius:16px; padding:24px; box-shadow:0 2px 12px rgba(0,0,0,.06); display:grid; gap:14px; max-width:620px; margin:0 auto; }
+  label { font-weight:600; font-size:.92rem; display:grid; gap:6px; }
+  input, select, textarea { font:inherit; padding:10px 12px; border:1px solid #ddd; border-radius:10px; width:100%; }
+  .erreur { color:#B42318; font-size:.85rem; font-weight:500; }
+  .encadre { background:#fff; border-radius:16px; padding:24px; box-shadow:0 2px 12px rgba(0,0,0,.06); max-width:620px; margin:0 auto; display:grid; gap:12px; }
+  footer { text-align:center; color:var(--gris); font-size:.85rem; padding:24px 16px; }
+</style>
+</head>
+<body>
+<div class="bandeau">Démonstration — données et commandes fictives, remises à zéro régulièrement. Aucun gâteau ne sera livré.</div>
+<header>
+  <h1>MonGâteau</h1>
+  <p>Gâteaux artisanaux à Libreville — commande en ligne, ticket et paiement à la livraison</p>
+  <nav>
+    <a href="/">Nos gâteaux</a>
+    <a href="/commande/">Commander</a>
+    <a href="/api/cakes/">API publique</a>
+    <a href="/api/admin/orders/statistics/">Statistiques (API admin)</a>
+  </nav>
+</header>
+<main>{% block contenu %}{% endblock %}</main>
+<footer>Projet MonGâteau — démo publique du portfolio de Jesse MPIGA-ODOUMBA (MPJ High-Tech)</footer>
+</body>
+</html>
