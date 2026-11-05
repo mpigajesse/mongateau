@@ -255,7 +255,7 @@ Les détails (nom, prix, etc.) sont récupérés depuis la base de données.
 ## 📞 Support
 
 Pour toute question:
-- 📧 Contacter NAOMIE MOUSSAVOU
+- 📧 Contacter la pâtisserie
 - 📝 Consulter la documentation
 - 🐛 Vérifier les logs Django
 
@@ -263,4 +263,4 @@ Pour toute question:
 
 **Version**: 2.0.0  
 **Date**: 2026-02-07  
-**Auteur**: NAOMIE MOUSSAVOU
+**Projet**: MonGâteau

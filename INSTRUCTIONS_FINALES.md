@@ -259,6 +259,6 @@ Vous avez déjà fait **90% du travail** ! Il ne reste plus qu'à :
 
 ---
 
-**Propriétaire : NAOMIE MOUSSAVOU**
+**MonGâteau**
 
 🍰 **MonGâteau** est presque prêt ! Dernière ligne droite ! 🚀

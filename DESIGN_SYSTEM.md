@@ -521,6 +521,6 @@ Les variables sont prêtes pour un thème sombre :
 
 ---
 
-**Design System créé pour MonGâteau - NAOMIE MOUSSAVOU**
+**Design System de MonGâteau**
 
 🍰 Architecture moderne, professionnelle et scalable

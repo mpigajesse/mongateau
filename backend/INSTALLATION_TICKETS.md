@@ -243,6 +243,6 @@ Pour toute question concernant le nouveau système de tickets, référez-vous à
 
 ---
 
-**Créé par:** NAOMIE MOUSSAVOU  
+**Projet :** MonGâteau  
 **Date:** 2026-02-07  
 **Version:** 1.0.0

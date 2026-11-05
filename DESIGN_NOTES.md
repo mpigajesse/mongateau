@@ -198,5 +198,5 @@ transition: all 0.3s ease
 
 ---
 
-**Design créé pour NAOMIE MOUSSAVOU**
+**Design de MonGâteau**
 🍰 MonGâteau - Pâtisserie Artisanale

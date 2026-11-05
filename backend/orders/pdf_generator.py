@@ -160,7 +160,7 @@ def generate_order_ticket(order):
         fontName='Helvetica-Oblique'
     )
     
-    elements.append(Paragraph("Propriétaire & Créatrice: NAOMIE MOUSSAVOU", footer_style))
+    elements.append(Paragraph("MonGâteau — pâtisserie artisanale", footer_style))
     elements.append(Paragraph("MonGâteau - Des gâteaux artisanaux avec amour 💕", footer_style))
     
     # Générer le PDF

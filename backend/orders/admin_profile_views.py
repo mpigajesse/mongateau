@@ -1,3 +1,4 @@
+import os
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -14,8 +15,9 @@ class AdminProfileViewSet(ViewSet):
         profile, _ = AdminProfile.objects.get_or_create(
             id=1,
             defaults={
-                'full_name': 'Naomie Moussavou',
-                'email': 'mpigajesse23@gmail.com',
+                # Coordonnées réelles : variables d'environnement, jamais dans le dépôt.
+                'full_name': os.environ.get('MONGATEAU_ADMIN_NAME', 'Administration'),
+                'email': os.environ.get('MONGATEAU_ADMIN_EMAIL', ''),
                 'phone': '',
                 'address': '',
             }

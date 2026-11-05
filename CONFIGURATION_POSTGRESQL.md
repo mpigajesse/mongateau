@@ -388,6 +388,6 @@ Si vous rencontrez des problèmes :
 
 ---
 
-**Base de données configurée pour NAOMIE MOUSSAVOU**
+**Base de données configurée pour MonGâteau**
 
 🍰 **MonGâteau** est maintenant connecté à PostgreSQL !

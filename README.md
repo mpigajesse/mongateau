@@ -2,7 +2,7 @@
 
 Application web moderne pour la commande de gâteaux artisanaux en ligne.
 
-**Propriétaire & Créatrice :** NAOMIE MOUSSAVOU
+**Projet :** MonGâteau, pâtisserie artisanale
 
 ## 🚀 Fonctionnalités
 
@@ -130,4 +130,4 @@ mongateau/
 
 ## 📝 License
 
-Propriété de NAOMIE MOUSSAVOU - Tous droits réservés
+Tous droits réservés

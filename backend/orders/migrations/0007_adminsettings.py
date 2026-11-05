@@ -15,8 +15,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('store_name', models.CharField(default='MonGâteau', max_length=200)),
-                ('store_phone', models.CharField(default='+241 07 40 13 02', max_length=50)),
-                ('store_email', models.EmailField(default='mpigajesse23@gmail.com', max_length=254)),
+                ('store_phone', models.CharField(blank=True, default='', max_length=50)),
+                ('store_email', models.EmailField(blank=True, default='', max_length=254)),
                 ('store_address', models.TextField(default='Libreville, Gabon')),
                 ('email_notifications', models.BooleanField(default=True)),
                 ('sms_notifications', models.BooleanField(default=True)),
