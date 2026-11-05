@@ -2,6 +2,9 @@
 
 Application web moderne pour la commande de gâteaux artisanaux en ligne.
 
+**Démo en ligne : [mongateau.eu.cc](https://mongateau.eu.cc)**
+Pâtisserie fictive : catalogue et commande avec ticket, aucune commande n'est transmise. La démo tourne sur une offre gratuite et met environ 50 secondes à se réveiller au premier accès.
+
 **Projet :** MonGâteau, pâtisserie artisanale
 
 ## 🚀 Fonctionnalités
