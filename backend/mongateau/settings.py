@@ -5,17 +5,33 @@ Django settings for MonGâteau project.
 from pathlib import Path
 import os
 
+# Valeurs par défaut = poste de développement (comportement d'origine) ;
+# en ligne, tout vient des variables d'environnement (voir DEPLOIEMENT_DEMO.md).
+def _env(nom, defaut=''):
+    return os.environ.get(nom, defaut)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-change-this-in-production-mongateau-2024'
+SECRET_KEY = _env('SECRET_KEY', 'django-insecure-change-this-in-production-mongateau-2024')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = _env('DEBUG', 'True').lower() in ('1', 'true', 'yes')
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [h.strip() for h in _env('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',') if h.strip()]
+RENDER_EXTERNAL_HOSTNAME = _env('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+CSRF_TRUSTED_ORIGINS = [o.strip() for o in _env('CSRF_TRUSTED_ORIGINS').split(',') if o.strip()]
+if RENDER_EXTERNAL_HOSTNAME:
+    CSRF_TRUSTED_ORIGINS.append(f'https://{RENDER_EXTERNAL_HOSTNAME}')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Démo publique (portfolio) : vitrine de démonstration sur « / », données
+# fictives, administration Django retirée. Vide = comportement normal.
+DEMO_PUBLIQUE = _env('DEMO_PUBLIQUE', '').lower() in ('1', 'true', 'yes')
 
 
 # Application definition
@@ -27,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     
     # Third party apps
     'rest_framework',
@@ -39,6 +56,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -70,16 +88,24 @@ WSGI_APPLICATION = 'mongateau.wsgi.application'
 
 
 # Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mongateau',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': '5432',
+# DATABASE_URL (démo en ligne : SQLite éphémère) prime sur la base PostgreSQL locale.
+if _env('DATABASE_URL'):
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.parse(
+        _env('DATABASE_URL'), conn_max_age=60,
+        ssl_require=_env('DATABASE_URL').startswith('postgres'),
+    )}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'mongateau',
+            'USER': 'postgres',
+            'PASSWORD': 'admin',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
     }
-}
 
 
 # Password validation
@@ -112,6 +138,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+STORAGES = {
+    'default': {'BACKEND': 'django.core.files.storage.FileSystemStorage'},
+    'staticfiles': {'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage'},
+}
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -131,7 +161,7 @@ REST_FRAMEWORK = {
 }
 
 # CORS settings - Allow frontend to access API
-CORS_ALLOWED_ORIGINS = [
+CORS_ALLOWED_ORIGINS = [o.strip() for o in _env('CORS_ALLOWED_ORIGINS').split(',') if o.strip()] + [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:5173",  # Vite dev server

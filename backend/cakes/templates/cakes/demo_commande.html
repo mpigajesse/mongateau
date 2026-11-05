@@ -1,0 +1,37 @@
+{% extends "cakes/demo_base.html" %}
+{% block titre %}Commander — MonGâteau (démo){% endblock %}
+{% block contenu %}
+<form method="post" action="/commande/">
+  {% csrf_token %}
+  <h2>Passer une commande</h2>
+  <p class="petit">Sans compte : vous recevez un ticket avec QR code, et vous payez à la livraison.</p>
+  <label>Gâteau
+    <select name="cake_type" required>
+      {% for g in gateaux %}
+      <option value="{{ g.id }}" {% if valeurs.cake_type == g.id|stringformat:"s" or choisi == g.id|stringformat:"s" %}selected{% endif %}>{{ g.name }} — {{ g.base_price|floatformat:0 }} FCFA</option>
+      {% endfor %}
+    </select>
+    {% for e in erreurs.cake_type %}<span class="erreur">{{ e }}</span>{% endfor %}
+  </label>
+  <label>Votre nom
+    <input name="customer_name" required maxlength="200" value="{{ valeurs.customer_name|default:'' }}" placeholder="Nom fictif, ex. Client Démo">
+    {% for e in erreurs.customer_name %}<span class="erreur">{{ e }}</span>{% endfor %}
+  </label>
+  <label>Téléphone
+    <input name="customer_phone" required value="{{ valeurs.customer_phone|default:'' }}" placeholder="Numéro fictif, ex. 00 00 00 00">
+    {% for e in erreurs.customer_phone %}<span class="erreur">{{ e }}</span>{% endfor %}
+  </label>
+  <label>Date de livraison (au moins 2 jours à l'avance)
+    <input type="date" name="delivery_date" required min="{{ date_min }}" value="{{ valeurs.delivery_date|default:date_min }}">
+    {% for e in erreurs.delivery_date %}<span class="erreur">{{ e }}</span>{% endfor %}
+  </label>
+  <label>Adresse de livraison
+    <textarea name="delivery_address" rows="2" required placeholder="Adresse fictive">{{ valeurs.delivery_address|default:'' }}</textarea>
+    {% for e in erreurs.delivery_address %}<span class="erreur">{{ e }}</span>{% endfor %}
+  </label>
+  <label>Message sur le gâteau (facultatif)
+    <input name="custom_message" maxlength="200" value="{{ valeurs.custom_message|default:'' }}" placeholder="Joyeux anniversaire !">
+  </label>
+  <button class="btn btn-plein" type="submit">Valider la commande</button>
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "cakes/demo_base.html" %}
+{% load humanize %}
+{% block contenu %}
+<div class="grille">
+  {% for g in gateaux %}
+  <article class="carte">
+    <img src="{{ g.image_url }}" alt="{{ g.name }}" loading="lazy">
+    <div>
+      <h2 style="font-size:1.1rem">{{ g.name }}</h2>
+      <p class="petit">{{ g.description|truncatechars:140 }}</p>
+      <p class="prix">à partir de {{ g.base_price|floatformat:0|intcomma }} FCFA</p>
+      <a class="btn btn-plein" href="/commande/?gateau={{ g.id }}" style="margin-top:auto;text-align:center">Commander</a>
+    </div>
+  </article>
+  {% empty %}
+  <p>Aucun gâteau disponible pour le moment.</p>
+  {% endfor %}
+</div>
+{% endblock %}
