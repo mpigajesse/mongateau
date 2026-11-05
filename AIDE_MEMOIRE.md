@@ -443,6 +443,6 @@ python manage.py createsuperuser
 
 ---
 
-**Propriétaire : NAOMIE MOUSSAVOU**
+**MonGâteau**
 
 🍰 **MonGâteau** - Gardez ce fichier à portée de main !

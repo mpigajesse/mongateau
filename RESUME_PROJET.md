@@ -2,7 +2,7 @@
 
 ## 🎯 Vue d'ensemble
 
-**MonGâteau** est une application web complète de commande de gâteaux artisanaux développée pour **NAOMIE MOUSSAVOU**.
+**MonGâteau** est une application web complète de commande de gâteaux artisanaux développée pour une pâtisserie artisanale.
 
 ### Objectif principal
 Permettre aux clients de commander des gâteaux en ligne de manière **simple, rapide et sans création de compte**, avec génération automatique de tickets PDF et paiement à la livraison.
@@ -386,7 +386,7 @@ frontend/
 
 ## 👥 Équipe
 
-**Propriétaire & Créatrice** : NAOMIE MOUSSAVOU
+**Projet** : MonGâteau, pâtisserie artisanale
 
 **Activité** : Fabrication artisanale de gâteaux & gestion des commandes
 
@@ -421,4 +421,4 @@ Pour toute question :
 
 **🍰 MonGâteau - Commander un gâteau devient un plaisir simple, rapide et gourmand !**
 
-*Développé avec passion pour NAOMIE MOUSSAVOU* ❤️
+*Développé avec passion pour MonGâteau*

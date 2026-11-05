@@ -50,7 +50,7 @@ Conservez-le précieusement !
 
 ---
 
-## 👨‍💼 Pour l'administrateur (NAOMIE MOUSSAVOU)
+## 👨‍💼 Pour l'administratrice ou l'administrateur
 
 ### Accès à l'interface d'administration
 
@@ -237,6 +237,6 @@ Les prix sont en FCFA. Modifiez le "Prix de base" dans l'admin.
 
 ---
 
-**Propriétaire : NAOMIE MOUSSAVOU**
+**MonGâteau**
 
 Pour toute question : consultez ce guide ou contactez le support technique. 🍰

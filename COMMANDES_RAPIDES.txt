@@ -54,6 +54,6 @@ Frontend : D:\mongateau\frontend\start_frontend.bat
 
 
 ============================================================
-Propriétaire : NAOMIE MOUSSAVOU
+MonGâteau
 🍰 MonGâteau - Presque prêt !
 ============================================================

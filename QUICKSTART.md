@@ -271,6 +271,6 @@ Pour déployer en production, consultez :
 
 ---
 
-**Propriétaire : NAOMIE MOUSSAVOU**
+**MonGâteau**
 
 🍰 **MonGâteau** - Commander un gâteau devient un plaisir simple, rapide et gourmand !
